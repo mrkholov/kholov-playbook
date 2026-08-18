@@ -26,6 +26,10 @@ s, n_img = re.subn(r'src="(assets/img/[^"]+)"', inline, s)
 for tag in ('<!DOCTYPE html>', '<html lang="ru">', '<head>', '</head>',
             '<body>', '</body>', '</html>'):
     s = s.replace(tag + '\n', '').replace(tag, '')
+# иконки лежат отдельными файлами — в самодостаточной версии их нет,
+# у артефакта иконка задаётся при публикации
+s = re.sub(r'<link rel="(?:apple-touch-)?icon"[^>]*>\n?', '', s)
+
 s = re.sub(r'<meta charset="utf-8">\n?', '', s)
 s = re.sub(r'<meta name="viewport"[^>]*>\n?', '', s)
 s = s.strip() + '\n'
