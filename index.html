@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Плейбук Егора Холова</title>
+<meta name="description" content="Кейсы маркетинг-директора: гейминг и киберспорт, инфлюенсеры, измерение охватных каналов, перформанс, команда и P&L.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0A0C; --fg:#F2F1EE; --dim:#B4B3B8; --mute:#77767C;
+  --card:#141416; --chip:#1D1C1F; --line:rgba(255,255,255,0.08);
+  --line2:rgba(255,255,255,0.14); --acc:#FF6A1A; --acc2:#FF8A47;
+  --shell:1240px;
+}
+*{box-sizing:border-box;font-family:'Golos Text',-apple-system,'Segoe UI',sans-serif;}
+html{scroll-behavior:smooth;}
+section[id]{scroll-margin-top:150px;}
+body{margin:0;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;}
+a{color:var(--acc);text-decoration:none;}
+a:hover{color:var(--acc2);}
+::selection{background:var(--acc);color:var(--bg);}
+img{max-width:100%;}
+.wrap{max-width:var(--shell);margin:0 auto;padding:0 40px;}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;}
+
+/* ---------- шапка ---------- */
+.stickyhead{position:sticky;top:0;z-index:60;}
+.topbar{background:rgba(10,10,12,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 40px;max-width:var(--shell);margin:0 auto;flex-wrap:wrap;}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0;text-decoration:none;color:inherit;cursor:pointer;}
+.brand:hover{color:inherit;}
+.brand:hover .ava{border-color:var(--acc);}
+.brand:hover .logo span{color:var(--acc2);}
+.ava{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid var(--line2);}
+.logo{font-weight:900;font-size:20px;letter-spacing:0.4px;white-space:nowrap;}
+.logo span{color:var(--acc);}
+.who{font-size:14.5px;color:var(--mute);font-weight:500;white-space:nowrap;}
+.topnav{display:flex;gap:2px;flex-wrap:wrap;font-size:14px;}
+.topnav a{color:var(--dim);font-weight:700;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s;}
+.topnav a:hover{background:var(--chip);color:var(--fg);}
+.topnav a.on{background:var(--acc);color:#0A0A0C;}
+
+/* ---------- фильтр ---------- */
+.filterbar{background:rgba(10,10,12,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.filterbar-in{display:flex;align-items:center;gap:10px;padding:11px 40px;max-width:var(--shell);margin:0 auto;flex-wrap:wrap;}
+.filterbar-lbl{font-size:13px;font-weight:700;letter-spacing:0.8px;color:var(--mute);text-transform:uppercase;margin-right:2px;}
+.fbtn{border:1px solid var(--line2);background:transparent;color:var(--dim);font-size:14.5px;font-weight:700;
+      padding:7px 14px;border-radius:999px;cursor:pointer;transition:.15s;white-space:nowrap;}
+.fbtn:hover{color:var(--fg);border-color:var(--fg);}
+.fbtn.on{background:var(--acc);border-color:var(--acc);color:#0A0A0C;}
+.fcount{font-size:14px;color:var(--mute);margin-left:auto;white-space:nowrap;}
+
+/* ---------- герой ---------- */
+.hero{padding:76px 0 20px;}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:14.5px;color:var(--acc);font-weight:600;letter-spacing:1.2px;margin-bottom:18px;}
+.hero h1{font-size:clamp(30px,4.4vw,52px);line-height:1.12;font-weight:800;letter-spacing:-0.9px;margin:0 0 24px;max-width:1000px;}
+.hero p{font-size:21px;line-height:1.6;color:var(--dim);max-width:760px;margin:0 0 34px;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-bottom:14px;}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px;}
+.stat b{display:block;font-size:34px;font-weight:800;letter-spacing:-0.8px;color:var(--acc);line-height:1.1;margin-bottom:8px;}
+.stat span{font-size:16px;color:var(--dim);line-height:1.45;}
+
+/* ---------- секции ---------- */
+.sec{padding:70px 0 10px;border-top:1px solid var(--line);margin-top:56px;}
+.sec-eyebrow{font-family:'JetBrains Mono',monospace;font-size:14.5px;color:var(--acc);font-weight:600;letter-spacing:1.2px;margin-bottom:14px;}
+.sec h2{font-size:clamp(25px,3vw,36px);font-weight:800;letter-spacing:-0.5px;margin:0 0 12px;}
+.sec-lede{font-size:19px;color:var(--dim);line-height:1.6;max-width:820px;margin:0 0 8px;}
+
+/* ---------- кейс ---------- */
+.case{border-top:1px solid var(--line);padding:38px 0 34px;position:relative;}
+.case-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;}
+.eyebrow{font-size:13.5px;font-weight:700;letter-spacing:0.9px;color:var(--mute);text-transform:uppercase;margin-bottom:11px;}
+.case h3{font-size:clamp(21px,2.3vw,28px);font-weight:800;letter-spacing:-0.3px;line-height:1.25;margin:0 0 14px;max-width:900px;}
+.lede{font-size:19px;line-height:1.62;color:var(--dim);max-width:860px;margin:0 0 22px;}
+.copy{flex-shrink:0;border:1px solid var(--line2);background:transparent;color:var(--mute);font-size:13px;font-weight:700;
+      letter-spacing:0.4px;padding:6px 11px;border-radius:8px;cursor:pointer;transition:.15s;}
+.copy:hover{color:var(--fg);border-color:var(--fg);}
+.copy.done{color:var(--acc);border-color:var(--acc);}
+
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:0 0 24px;}
+.metric{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;}
+.metric b{display:block;font-size:26px;font-weight:800;color:var(--acc);letter-spacing:-0.5px;line-height:1.15;margin-bottom:7px;}
+.metric span{font-size:15.5px;color:var(--dim);line-height:1.45;}
+
+.bul{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:11px;max-width:900px;}
+.bul li{display:flex;gap:12px;align-items:baseline;font-size:18px;line-height:1.6;color:var(--fg);}
+.bul li::before{content:'';flex-shrink:0;width:6px;height:6px;border-radius:50%;background:var(--acc);transform:translateY(-3px);}
+.sublabel{font-size:13.5px;font-weight:700;letter-spacing:0.9px;color:var(--mute);text-transform:uppercase;margin:0 0 12px;}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin:0 0 24px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px;}
+.card h4{font-size:18.5px;font-weight:800;margin:0 0 9px;letter-spacing:-0.2px;}
+.card p{font-size:16.5px;line-height:1.55;color:var(--dim);margin:0;}
+.card .res{display:block;margin-top:11px;font-size:15.5px;color:var(--acc);font-weight:700;}
+
+.why{background:var(--acc);color:#0A0A0C;border-radius:14px;padding:20px 24px;margin:24px 0 0;max-width:960px;}
+.why-tag{display:block;font-size:13px;font-weight:800;letter-spacing:0.9px;margin-bottom:9px;text-transform:uppercase;opacity:.72;}
+.why p{margin:0;font-size:18px;line-height:1.55;font-weight:600;}
+.hl{background:rgba(255,106,26,0.16);padding:1px 6px;border-radius:4px;font-weight:700;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+.why .hl{background:rgba(0,0,0,0.13);font-weight:800;}
+.why ::selection{background:#0A0A0C;color:var(--acc);}
+.note{border-left:2px solid var(--line2);padding:2px 0 2px 18px;margin:22px 0 0;max-width:860px;}
+.note p{margin:0;font-size:17.5px;line-height:1.6;color:var(--dim);}
+
+/* ---------- картинки ---------- */
+.shots{display:flex;flex-wrap:wrap;gap:14px;margin:10px 0 0;}
+.shot{--ar:1.6;flex-grow:calc(var(--ar)*100);flex-basis:calc(var(--ar)*220px);min-width:min(100%,270px);
+      display:flex;flex-direction:column;margin:0;background:#0E0E10;border:1px solid var(--line);
+      border-radius:12px;overflow:hidden;}
+.shots.wide .shot{flex-basis:100%;}
+.shot img{display:block;width:100%;height:auto;cursor:zoom-in;background:#0E0E10;}
+.shot figcaption{font-size:14.5px;color:var(--mute);padding:10px 14px 12px;line-height:1.45;border-top:1px solid var(--line);margin-top:auto;}
+
+/* ---------- спецпроекты: фото рядом со своим кейсом ---------- */
+.projects{margin:8px 0 0;}
+.proj{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding:26px 0;border-top:1px solid var(--line);}
+.proj:first-child{border-top:0;padding-top:8px;}
+.proj:nth-child(even){grid-template-columns:1fr 1.2fr;}
+.proj:nth-child(even) .proj-media{order:2;}
+.proj-media{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;align-items:start;}
+.proj-text h4{font-size:22px;font-weight:800;margin:0 0 11px;letter-spacing:-0.2px;}
+.proj-text p{font-size:16.5px;line-height:1.55;color:var(--dim);margin:0;}
+.proj-text .res{display:block;margin-top:13px;font-size:15.5px;color:var(--acc);font-weight:700;line-height:1.45;}
+
+/* ---------- лестница порогов ---------- */
+.ladder{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:0 0 24px;}
+.rung{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;position:relative;}
+.rung .step-n{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--acc);font-weight:600;letter-spacing:1px;margin-bottom:10px;}
+.rung b{display:block;font-size:20px;font-weight:800;margin-bottom:6px;}
+.rung .price{display:inline-block;font-size:14px;font-weight:700;color:#0A0A0C;background:var(--acc);border-radius:6px;padding:3px 9px;margin-bottom:8px;}
+.rung span{display:block;font-size:16px;color:var(--dim);line-height:1.45;}
+
+/* ---------- таймлайн карьеры ---------- */
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;}
+.tl{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 20px 20px;}
+.tl.now{border-color:rgba(255,106,26,0.45);}
+.tl .years{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--acc);font-weight:600;letter-spacing:0.6px;margin-bottom:10px;}
+.tl h4{font-size:20px;font-weight:800;margin:0 0 4px;}
+.tl .role{font-size:16px;color:var(--mute);margin-bottom:14px;}
+.tl ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.tl li{font-size:16.5px;line-height:1.5;color:var(--dim);padding-left:14px;position:relative;}
+.tl li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--acc);}
+
+/* ---------- рекомендации, контакты ---------- */
+.recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0 0 18px;}
+.rec{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;}
+.rec b{display:block;font-size:18.5px;font-weight:800;margin-bottom:5px;}
+.rec span{font-size:16px;color:var(--mute);}
+.signoff{display:flex;align-items:center;gap:22px;margin:0 0 20px;flex-wrap:wrap;}
+.signoff img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:1px solid var(--line2);}
+.signoff b{display:block;font-size:24px;font-weight:800;letter-spacing:-0.3px;margin-bottom:6px;}
+.signoff span{font-size:16.5px;color:var(--mute);}
+.contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;}
+.contact .k{font-size:13.5px;font-weight:700;letter-spacing:0.8px;color:var(--mute);text-transform:uppercase;margin-bottom:8px;}
+.contact a,.contact .v{font-size:18.5px;font-weight:700;color:var(--fg);}
+.contact a:hover{color:var(--acc);}
+
+footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:15px;color:var(--mute);}
+
+/* ---------- лайтбокс ---------- */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(6,6,8,0.94);display:none;align-items:center;justify-content:center;padding:32px;cursor:zoom-out;}
+.lb.on{display:flex;}
+.lb img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:10px;}
+
+.hidden{display:none !important;}
+
+@media (max-width:1020px){
+  .proj,.proj:nth-child(even){grid-template-columns:1fr;gap:18px;}
+  .proj:nth-child(even) .proj-media{order:0;}
+}
+@media (max-width:760px){
+  .wrap,.topbar-in,.filterbar-in{padding-left:20px;padding-right:20px;}
+  .topnav{display:none;}
+  .hero{padding-top:48px;}
+  .sec{padding-top:48px;margin-top:36px;}
+  .fcount{margin-left:0;width:100%;}
+}
+@media print{
+  .topbar,.filterbar,.copy,.lb{display:none !important;}
+  body{background:#fff;color:#111;}
+}
+</style>
+</head>
+<body>
+
+<div class="stickyhead">
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#" id="totop" aria-label="Наверх страницы">
+      <img class="ava" src="assets/img/egor-kholov.webp" alt="Егор Холов">
+      <div class="logo">ХОЛОВ<span>•</span>ПЛЕЙБУК</div>
+      <div class="who">Егор Холов</div>
+    </a>
+    <nav class="topnav">
+      <a href="#gaming" data-nav>Гейминг</a>
+      <a href="#influence" data-nav>Инфлюенсеры</a>
+      <a href="#measure" data-nav>Измерение</a>
+      <a href="#perf" data-nav>Перформанс</a>
+      <a href="#events" data-nav>События</a>
+      <a href="#lead" data-nav>Команда и P&amp;L</a>
+      <a href="#fail" data-nav>Ошибки</a>
+      <a href="#contacts" data-nav>Контакты</a>
+    </nav>
+  </div>
+</div>
+
+<div class="filterbar">
+  <div class="filterbar-in">
+    <span class="filterbar-lbl">Подборка</span>
+    <button class="fbtn on" data-preset="all">Все кейсы</button>
+    <button class="fbtn" data-preset="esports gaming">Киберспорт и гейминг</button>
+    <button class="fbtn" data-preset="betting measure influence">Беттинг и медиа</button>
+    <button class="fbtn" data-preset="edtech perf">EdTech и e-commerce</button>
+    <button class="fbtn" data-preset="lead measure">Директорская роль</button>
+    <span class="fcount" id="fcount"></span>
+  </div>
+</div>
+</div>
+
+<main class="wrap">
+
+  <!-- ============ ГЕРОЙ ============ -->
+  <section class="hero">
+    <div class="kicker">ЕГОР ХОЛОВ · ПЛЕЙБУК КЕЙСОВ</div>
+    <h1>Довожу имиджевые бюджеты до пользователей, стоимости и контрольной группы.</h1>
+    <p>14 лет в маркетинге: перформанс-агентство, игровая индустрия, EdTech. Работаю на стыке больших охватных бюджетов и перформанс-дисциплины — там, где обычно отчитываются охватом.</p>
+    <div class="stats">
+      <div class="stat"><b>$1M+</b><span>месячный рекламный бюджет в высокий сезон</span></div>
+      <div class="stat"><b>×6</b><span>рост выручки в последней компании за 4 года</span></div>
+      <div class="stat"><b>1 млн+</b><span>игроков в год привлечено или возвращено</span></div>
+      <div class="stat"><b>19 / 30</b><span>человек в прямом подчинении и в матричной команде</span></div>
+    </div>
+  </section>
+
+  <!-- ============ КАРЬЕРА ============ -->
+  <section class="sec" id="career">
+    <div class="sec-eyebrow">ОПЫТ</div>
+    <h2>Три компании, три разных типа задачи</h2>
+    <p class="sec-lede">Перформанс на агентском масштабе, маркетинг AAA-игры в СНГ, P&amp;L международного EdTech-направления.</p>
+    <div class="timeline" style="margin-top:26px">
+      <div class="tl">
+        <div class="years">ноя 2012 — авг 2018</div>
+        <h4>IT-Agency</h4>
+        <div class="role">Performance Marketing Lead</div>
+        <ul>
+          <li>Финтех, мобильные приложения, e-commerce</li>
+          <li>Банковский продукт: $20K → $800K в месяц с сохранением KPI</li>
+          <li>11 проектов и более 1000 кампаний одновременно</li>
+          <li>Нанял, обучил и вывел на самостоятельные проекты 7 специалистов</li>
+          <li>1 место на мероприятии Яндекса за выявление фрод-трафика</li>
+        </ul>
+      </div>
+      <div class="tl">
+        <div class="years">авг 2018 — июн 2022</div>
+        <h4>Wargaming · World of Tanks</h4>
+        <div class="role">Product / Senior Digital Marketing Manager</div>
+        <ul>
+          <li>Отвечал за маркетинг и KPI продукта в СНГ</li>
+          <li>Привлечение, возврат, выручка, бренд-метрики</li>
+          <li>Бюджеты свыше $1M в месяц в высокий сезон</li>
+          <li>Кросс-функциональная команда до 30 человек</li>
+          <li>Реклама, PR, SMM, инфлюенсеры, спецпроекты, офлайн</li>
+        </ul>
+      </div>
+      <div class="tl now">
+        <div class="years">июн 2022 — июн 2026</div>
+        <h4>EBAC Online · EdTech</h4>
+        <div class="role">Директор по маркетингу, Мексика — 2 года 9 месяцев в должности</div>
+        <ul>
+          <li>Стратегия, P&amp;L, медиапланирование, CRM</li>
+          <li>Выручка $90K → $550K в месяц на пике</li>
+          <li>×2 в первый год, +80% во второй</li>
+          <li>ДРР около 35% при бюджете $100–250K в месяц</li>
+          <li>19 человек: 5 тимлидов и их команды</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><p>С января 2026 — консалтинг EdTech-проекта по разработке игр и проектная работа в агентстве закупки рекламы, беттинг-вертикаль.</p></div>
+  </section>
+
+  <!-- ============ ПРИНЦИПЫ ============ -->
+  
+  <!-- ============ A. ГЕЙМИНГ И КИБЕРСПОРТ ============ -->
+  <section class="sec" id="gaming">
+    <div class="sec-eyebrow">СЕКЦИЯ A</div>
+    <h2>Гейминг, киберспорт и комьюнити</h2>
+    <p class="sec-lede">Четыре года внутри игровой индустрии: World of Tanks, СНГ-регион. Активации внутри игровой экономики, спонсорские спецпроекты, реактивация, персонализация.</p>
+
+    <article class="case" data-tags="esports gaming betting">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">Wargaming · World of Tanks · придумал, защитил, получил бюджет, вёл сам</div>
+          <h3>Построил киберспортивную активацию внутри игровой экономики</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <p class="lede">У скина CS воспринимаемая ценность в разы выше себестоимости. Игрок проходит порог активности ради предмета, который стоит нам доллар-два. Затем погружается в задания и комьюнити и с большей вероятностью остаётся в продукте.</p>
+      <div class="metrics">
+        <div class="metric"><b>в 3 раза</b><span>ниже стоимость нового игрока по когорте</span></div>
+        <div class="metric"><b>$15 → ~$16</b><span>было: столько стоил один первый бой. стало: столько стоит игрок с 50 часами в игре</span></div>
+        <div class="metric"><b>~400</b><span>игроков за 3 месяца пилота</span></div>
+      </div>
+      <div class="sublabel">Награда привязана к порогу удержания</div>
+      <div class="ladder">
+        <div class="rung"><div class="step-n">СТУПЕНЬ 01</div><b>Первый бой</b><span class="price">скин $1–2</span><span>Вход в продукт</span></div>
+        <div class="rung"><div class="step-n">СТУПЕНЬ 02</div><b>100 боёв</b><span class="price">скин $5</span><span>Проход точки оттока</span></div>
+        <div class="rung"><div class="step-n">СТУПЕНЬ 03</div><b>50 часов</b><span class="price">скин $10</span><span>Сформированная привычка, игры в пати и комьюнити</span></div>
+      </div>
+      <ul class="bul">
+        <li>Система баллов за внутриигровую активность и турниры — наибольший урон за неделю и другие задания.</li>
+        <li>Магазин, где игрок сам выбирал награду и обменивал баллы на скины для CS. Валюта чужой игры как мотиватор внутри своей.</li>
+        <li>Скины закупал на площадках, экономику считал под целевую стоимость игрока.</li>
+        <li>Собрал Discord-комьюнити: игроки общались и играли вместе — это удержало когорту после окончания механики.</li>
+        <li>Сам вёл стримы, данные сверял с командой аналитики.</li>
+        <li>Пилот остановлен в 2022 в связи с релокацией.</li>
+      </ul>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p>Механика живёт внутри игровой экономики: награда выдаётся за пройденный порог в продукте. <span class="hl">Такие деньги видно в удержании когорты,</span> и результат читается по её поведению через месяцы.</p></div>
+    </article>
+
+    <article class="case" data-tags="gaming betting edtech">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">World of Tanks · EdTech-консалтинг, 2026 — гипотеза проверена дважды</div>
+          <h3>Проверил, что неденежная награда конвертирует лучше скидки той же стоимости</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <div class="cards">
+        <div class="card"><h4>Геймдев · World of Tanks</h4><p>Скин CS вместо игровой валюты и прямых бонусов. Воспринимаемая ценность в разы выше себестоимости — игрок проходит порог активности ради предмета, который стоит нам доллар-два.</p></div>
+        <div class="card"><h4>EdTech · консалтинг, 2026</h4><p>Игра в подарок при покупке профессии вместо денежной скидки. Конверсия выше при той же себестоимости промо и без размывания цены продукта.</p></div>
+      </div>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p>Фрибет и бонусная ставка работают по той же логике. <span class="hl">Награду можно привязать к порогу поведения,</span> и это даёт рычаг: управлять вовлечением, не трогая цену и платёжное поведение.</p></div>
+    </article>
+
+    <article class="case" data-tags="gaming events brand esports">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">Wargaming · привлечение зрителей, промо, замер эффекта</div>
+          <h3>Привёл 200 000 зрителей на мероприятие и измерил приток игроков</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <p class="lede">День танкиста — праздник продукта, вынесенный в город. Проект вёл не я. Моя зона: привлечение зрителей, промо и доказательство того, что событие повлияло на приток игроков.</p>
+      <div class="metrics">
+        <div class="metric"><b>200 000</b><span>зрителей мероприятия</span></div>
+        <div class="metric"><b>300+</b><span>публикаций в медиа и на ТВ</span></div>
+      </div>
+      <ul class="bul">
+        <li>Продвижение по трём средам: диджитал, ТВ, наружная реклама.</li>
+        <li>Зафиксировали приток игроков через органику и брендовый трафик — событие измеряли.</li>
+      </ul>
+      <div class="shots">
+        <figure class="shot" style="--ar:1.894"><img src="assets/img/tankday-crowd.webp" alt="Зрители на мероприятии ко Дню танкиста" loading="lazy"><figcaption>Площадка мероприятия</figcaption></figure>
+        <figure class="shot" style="--ar:1.79"><img src="assets/img/tankday-aerial.webp" alt="Мероприятие ко Дню танкиста с высоты" loading="lazy"><figcaption>Общий план площадки</figcaption></figure>
+        <figure class="shot" style="--ar:1.728"><img src="assets/img/tankday-interview.webp" alt="Интервью на площадке мероприятия" loading="lazy"><figcaption>ТВ-съёмка на площадке</figcaption></figure>
+        <figure class="shot" style="--ar:1.501"><img src="assets/img/tankday-stage.webp" alt="Сцена и зрители на мероприятии" loading="lazy"><figcaption>Основная сцена</figcaption></figure>
+      </div>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p>Событие такого масштаба обычно закрывают отчётом об охвате. <span class="hl">Здесь под него подведён замер притока</span> — то же самое применимо к любому офлайн-активу.</p></div>
+    </article>
+
+    <article class="case" data-tags="gaming brand esports betting">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">Wargaming · совместно с PR- и биздев-командами</div>
+          <h3>Довожу спонсорский актив до инфоповода, который живёт сам</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <p class="lede">Моя зона в каждом проекте: концепция, бюджет, диджитал-активация и замер эффекта. Реализация — вместе с PR- и биздев-командами.</p>
+      <div class="projects">
+
+        <div class="proj">
+          <div class="proj-media">
+            <figure class="shot" style="--ar:1.809"><img src="assets/img/belavia-plane.webp" alt="Самолёт «Белавиа» в ливрее World of Tanks" loading="lazy"></figure>
+          </div>
+          <div class="proj-text">
+            <h4>Самолёт «Белавиа»</h4>
+            <p>Контракт, дизайн и производство ливреи, оформление салона, печатная продукция.</p>
+            <span class="res">500+ публикаций в медиа и на ТВ, десятки тысяч упоминаний в соцсетях</span>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-media">
+            <figure class="shot" style="--ar:1.333"><img src="assets/img/belaz-front.webp" alt="Брендированный карьерный самосвал БелАЗ" loading="lazy"></figure>
+            <figure class="shot" style="--ar:1.333"><img src="assets/img/belaz-side.webp" alt="БелАЗ в брендировании World of Tanks, вид сбоку" loading="lazy"></figure>
+          </div>
+          <div class="proj-text">
+            <h4>БелАЗ ко Дню танкиста</h4>
+            <p>Брендирование карьерного самосвала под праздник продукта.</p>
+            <span class="res">120+ публикаций и ТВ-репортажи</span>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-media">
+            <figure class="shot" style="--ar:2.283"><img src="assets/img/field-logo.webp" alt="200-метровый логотип на поле" loading="lazy"></figure>
+          </div>
+          <div class="proj-text">
+            <h4>200-метровый логотип на поле</h4>
+            <p>Совместно с «Ростсельмаш», Краснодарский край.</p>
+            <span class="res">История разошлась по федеральным медиа</span>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-media">
+            <figure class="shot" style="--ar:0.561"><img src="assets/img/navigator-splash.webp" alt="Заставка «Яндекс.Навигатора» в брендировании World of Tanks" loading="lazy"></figure>
+            <figure class="shot" style="--ar:1.479"><img src="assets/img/navigator-studio.webp" alt="Запись озвучки в студии" loading="lazy"><figcaption>Запись озвучки</figcaption></figure>
+          </div>
+          <div class="proj-text">
+            <h4>Озвучка «Яндекс.Навигатора»</h4>
+            <p>К 23 февраля, с Владимиром Машковым. Федеральный охват через чужой продукт.</p>
+            <span class="res">Брендирование интерфейса и голос актёра</span>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-media">
+            <figure class="shot" style="--ar:1.693"><img src="assets/img/tiktok-key.webp" alt="Ключевой визуал охватного проекта в TikTok" loading="lazy"></figure>
+            <figure class="shot" style="--ar:2.0"><img src="assets/img/tiktok-creator.webp" alt="Интервью с OG Buda в проекте TikTok" loading="lazy"><figcaption>Пример интервью с OG Buda</figcaption></figure>
+          </div>
+          <div class="proj-text">
+            <h4>Охватный проект в TikTok</h4>
+            <p>Привлечение молодой аудитории.</p>
+            <span class="res">Охват более 15 млн человек, 10 000+ единиц пользовательского контента</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p>Первая задача в спонсорстве обычно звучит как «активировать текущие контракты». Вот как это выглядит: берём актив и достраиваем до инфоповода, <span class="hl">который дальше расходится без доплаты за медиа.</span></p></div>
+    </article>
+
+    <article class="case" data-tags="gaming betting perf measure">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">Wargaming · решение работает больше 6 лет</div>
+          <h3>Собрал персонализированную воронку возврата игроков</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <p class="lede">Проникновение продукта в СНГ было высоким, а посадочные страницы оставались заточены под новых игроков. Большая часть трафика приходила от тех, кто уже зарегистрирован, и упиралась в оффер, который им не подходил.</p>
+      <div class="metrics">
+        <div class="metric"><b>+370%</b><span>вернувшихся игроков из рекламы в месяц</span></div>
+        <div class="metric"><b>+$85K</b><span>дополнительной выручки в месяц от вернувшихся</span></div>
+        <div class="metric"><b>+$18K</b><span>в месяц от активных через механику первой транзакции</span></div>
+      </div>
+      <ul class="bul">
+        <li>Страница при загрузке распознаёт игрока по cookie, находит его в базе и сегментирует.</li>
+        <li>На странице появляется имя игрока и персональное предложение.</li>
+        <li>Ушедшим — бонус за возврат, активным — бонус за транзакцию, новым — стандартный вход.</li>
+        <li>Решение работает больше 6 лет и стало стандартом среди игр с высоким проникновением.</li>
+      </ul>
+      <div class="shots two">
+        <figure class="shot" style="--ar:1.534"><img src="assets/img/landing-generic.webp" alt="Обычная посадочная страница World of Tanks" loading="lazy"><figcaption>Обычная страница: одинаковое предложение для всех</figcaption></figure>
+        <figure class="shot" style="--ar:1.251"><img src="assets/img/landing-personal.webp" alt="Персонализированная посадочная страница с именем игрока" loading="lazy"><figcaption>Та же страница после распознавания: имя игрока и персональное предложение</figcaption></figure>
+        <figure class="shot" style="--ar:1.589"><img src="assets/img/landing-winback.webp" alt="Экран возврата игрока с персональными подарками" loading="lazy"><figcaption>Сценарий возврата для ушедшего игрока</figcaption></figure>
+      </div>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p><span class="hl">Новичок, активный и спящий игрок должны видеть разные предложения.</span> В беттинге логика та же, и упирается она в то же место — в посадочную страницу, которую обычно делают одну на всех.</p></div>
+    </article>
+
+    <article class="case" data-tags="gaming betting brand">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">Wargaming · три кампании, каждая подкреплена изменениями в продукте</div>
+          <h3>Вернул в продукт больше 300 000 игроков</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <div class="cards">
+        <div class="card"><h4>«Назад в прошлое» — 10 лет танкам</h4><p>Возврат тех, кто не заходил больше года. В игру вернули запомнившиеся фичи, кампанию подкрепили видео-воспоминаниями.<span class="res">90 000+ вернувшихся игроков</span></p></div>
+        <div class="card"><h4>Коллаборация с «Союзмультфильмом»</h4><p>Ко Дню космонавтики, с героями «Тайны третьей планеты». Персонажей выдавали за задания в игре.<span class="res">70 000+ вернувшихся игроков</span></p></div>
+        <div class="card"><h4>Чак Норрис и Шварценеггер</h4><p>Новогодние кампании: озвучка актёрами, персонажи и задания внутри продукта.<span class="res">Охват 10 млн+, 150 000+ привлечённых и возвращённых</span></p></div>
+      </div>
+      <div class="shots">
+        <figure class="shot" style="--ar:1.199"><img src="assets/img/back-to-past-landing.webp" alt="Посадочная страница кампании «Назад в прошлое»" loading="lazy"><figcaption>«Назад в прошлое»: страница кампании</figcaption></figure>
+        <figure class="shot" style="--ar:1.353"><img src="assets/img/back-to-past-heroes.webp" alt="Персонажи анимационного ролика кампании" loading="lazy"><figcaption>Анимационная линия кампании</figcaption></figure>
+        <figure class="shot" style="--ar:1.528"><img src="assets/img/back-to-past-production.webp" alt="Съёмочный монитор на производстве ролика" loading="lazy"><figcaption>Продакшен ролика</figcaption></figure>
+        <figure class="shot" style="--ar:2.612"><img src="assets/img/soyuzmult-key.webp" alt="Ключевой визуал коллаборации с «Союзмультфильмом»" loading="lazy"><figcaption>Коллаборация с «Союзмультфильмом»</figcaption></figure>
+        <figure class="shot" style="--ar:1.868"><img src="assets/img/soyuzmult-iss.webp" alt="Космонавты на МКС в поддержку кампании ко Дню космонавтики" loading="lazy"><figcaption>Поддержка кампании ко Дню космонавтики</figcaption></figure>
+        <figure class="shot" style="--ar:1.722"><img src="assets/img/norris-key.webp" alt="Ключевой визуал новогодней кампании с Чаком Норрисом" loading="lazy"><figcaption>Новогодняя кампания с Чаком Норрисом</figcaption></figure>
+        <figure class="shot" style="--ar:1.04"><img src="assets/img/schwarzenegger.webp" alt="Кадр из ролика с Арнольдом Шварценеггером" loading="lazy"><figcaption>Кадр из ролика: «Приветствую, танкисты!»</figcaption></figure>
+        <figure class="shot" style="--ar:1.772"><img src="assets/img/newyear-key.webp" alt="Ключевой визуал новогодней кампании" loading="lazy"><figcaption>Ключевой визуал новогодней кампании</figcaption></figure>
+      </div>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p>Общее во всех трёх: <span class="hl">маркетинговая кампания подкреплена изменением внутри продукта.</span> Реактивация спящей базы делается вместе с продуктовой командой, закупкой медиа она не решается.</p></div>
+    </article>
+
+  </section>
+
+  <!-- ============ B. ИНФЛЮЕНСЕРЫ ============ -->
+  <section class="sec" id="influence">
+    <div class="sec-eyebrow">СЕКЦИЯ B</div>
+    <h2>Инфлюенсеры и стримеры</h2>
+    <p class="sec-lede">Построил канал с нуля до третьего по выручке в компании. Отбор, брифы, аналитика и то, что делать с теми, кто не сработал.</p>
+
+    <article class="case" data-tags="influence edtech betting esports">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">EBAC Online · Мексика и Бразилия</div>
+          <h3>Построил инфлюенс-канал с нуля до $70K в месяц</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <p class="lede">На старте: $1,5K в месяц, два человека и отсутствие системы отбора. Через год — третий канал по выручке после Meta и Google.</p>
+      <div class="metrics">
+        <div class="metric"><b>$1,5K → $70K</b><span>выручка канала в месяц при сохранении ДРР около 35%</span></div>
+        <div class="metric"><b>120+</b><span>интеграций ежемесячно</span></div>
+        <div class="metric"><b>−30%</b><span>стоимость заявки после внедрения запроса скидок</span></div>
+        <div class="metric"><b>2 → 7</b><span>человек в команде, нанимал и обучал сам</span></div>
+      </div>
+      <div class="note"><p>Добавил в скрипт переговоров запрос скидки у инфлюенсера для его аудитории. Одна строка в процессе, которая изменила экономику всего канала.</p></div>
+      <div class="shots two">
+        <figure class="shot" style="--ar:1.61"><img src="assets/img/influencer-team.webp" alt="Команда по работе с блогерами" loading="lazy"><figcaption>Команда по работе с блогерами, Мексика</figcaption></figure>
+        <figure class="shot" style="--ar:7.538"><img src="assets/img/influencer-tracker.webp" alt="Таблица учёта интеграций с блогерами" loading="lazy"><figcaption>Учёт интеграций: блогер, платформа, менеджер, цена, статус</figcaption></figure>
+      </div>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p>Формат я не изобретал. Построил систему: как отбираем, как брифуем, как считаем и <span class="hl">что делаем с теми, кто не сработал.</span> Это переносится в любую вертикаль, где блогер — закупочная единица.</p></div>
+    </article>
+
+    <article class="case" data-tags="influence edtech betting">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">Операционка канала</div>
+          <h3>Собрал операционную систему работы с блогерами</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <ul class="bul">
+        <li>Календарь публикаций и контент-план.</li>
+        <li>Скрипты для блогеров и шаблоны визуала для интеграций.</li>
+        <li>Отслеживание продаж по UTM-меткам, промокодам и QR-кодам.</li>
+        <li>Аналитика в разрезах: блогер, менеджер, платформа, тип интеграции.</li>
+        <li>Система мотивации для сотрудников отдела.</li>
+        <li>Эффективность каждого менеджера отдела считаю отдельно от результата по блогерам.</li>
+        <li>AI для первичной коммуникации с блогерами — переписка масштабируется без роста команды.</li>
+      </ul>
+    </article>
+
+    <article class="case" data-tags="influence edtech betting">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">Модели закупки</div>
+          <h3>Работаю по трём моделям: фикс, CPA и бартер</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <ul class="bul">
+        <li>Модель выбирается под размер и предсказуемость блогера.</li>
+        <li>Микроинфлюенсеры и CPA-модель как отдельное направление.</li>
+        <li>Формат интеграции через обзор продукта.</li>
+        <li>Видео у блогеров как источник поискового трафика с длинным хвостом.</li>
+      </ul>
+    </article>
+
+    <article class="case" data-tags="influence measure esports betting">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">Метод · стримеры и инфлюенсеры</div>
+          <h3>Измеряю четыре вещи, которых обычно нет в отчёте</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <p class="lede">Эти четыре метрики дополняют охват и меняют решение о бюджете.</p>
+      <div class="cards">
+        <div class="card"><h4>Инкрементальный охват</h4><p>Пул стримеров в русскоязычном сегменте сильно пересекается по аудитории. Сложение охватов считает одних и тех же людей по многу раз. Считать надо, сколько добавляет следующий стример к уже собранному портфелю.</p></div>
+        <div class="card"><h4>Качество когорты</h4><p>Стоимость регистрации — промежуточная метрика. Финальная — что эта когорта даёт через 90 и 180 дней.</p></div>
+        <div class="card"><h4>Созданный и снятый спрос</h4><p>Промокод фиксирует последнее касание и хорошо ловит тех, кто дошёл бы и так. Отсюда красивый CPA у активов, которые ничего не создали.</p></div>
+        <div class="card"><h4>Эффект, который не ловится атрибуцией</h4><p>У стрима нет кликабельной ссылки в кадре, а пост-вью площадки не отдают. Эффект приходится ловить сравнением: сплиты, контрольные группы, замер до и после эфира.</p></div>
+      </div>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p>Каждая из четырёх метрик уже посчитана мной в другом канале: инкрементальность — на офлайне, качество когорты — в EdTech, контрольные группы — в медийке и в акциях. <span class="hl">Перенести метод дешевле, чем изобрести его.</span></p></div>
+    </article>
+  </section>
+
+  <!-- ============ C. ИЗМЕРЕНИЕ ============ -->
+  <section class="sec" id="measure">
+    <div class="sec-eyebrow">СЕКЦИЯ C</div>
+    <h2>Измерение охватных каналов</h2>
+    <p class="sec-lede">То, что отличает директора по маркетингу от сильного перформанс-специалиста: умение защитить или закрыть охватный бюджет цифрой.</p>
+
+    <article class="case" data-tags="measure lead brand gaming">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">Wargaming · год наблюдения, вывод отрицательный</div>
+          <h3>Измерил инкрементальность офлайн-рекламы на парах похожих городов</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <p class="lede">Задача: до утверждения годового бюджета измерить реальное влияние охватной кампании на органику и брендовый поиск.</p>
+      <ul class="bul">
+        <li>Собрали пары сопоставимых городов: в одних усиливали наружку, ТВ, радио, торговые центры и брендирование такси, в других не трогали ничего.</li>
+        <li>Замеряли аплифт в течение года вместе с командой аналитики.</li>
+        <li>Существенного аплифта не увидели. В отдельных городах прирост был, но нерациональный для масштабирования.</li>
+        <li>Решение: не масштабировать на весь СНГ, бюджет перераспределить в диджитал.</li>
+      </ul>
+      <div class="note"><p>На тест ушла заметная доля годового бюджета, и результат оказался отрицательным. Решение не масштабировать сэкономило кратно больше и заменило годовой спор об эффективности офлайна цифрой. Я считаю такой результат нормальной стоимостью знания.</p></div>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p>Ответ на вопрос, что я делаю с результатами измерений. Вывод здесь не «резать» и не «оставить как есть», а <span class="hl">«перераспределить по данным».</span> Готов приходить с выводом «этот актив не окупается».</p></div>
+    </article>
+
+    <article class="case" data-tags="measure brand lead betting">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">Онлайн-кинотеатры, сервис знакомств · 900+ респондентов</div>
+          <h3>Доказал вклад медийки статистикой</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>+8,4 п. п.</b><span>категорийный ad recall: 23,0% → 31,4%, p ≈ 0,004</span></div>
+        <div class="metric"><b>+7,0 п. п.</b><span>знание бренда: 12,6% → 19,6%, p ≈ 0,004</span></div>
+        <div class="metric"><b>900+</b><span>респондентов в контрольной и экспонированной группах</span></div>
+      </div>
+      <ul class="bul">
+        <li>Опрос по методологии brand lift: контрольная группа против экспонированной, собранной как look-a-like к тем, кто видел рекламу.</li>
+        <li>Замеры по всей воронке: запоминаемость категории, знание бренда, текущее использование, намерение установить.</li>
+        <li>Считали не только дельту, но и статистическую значимость: p-value и доверительные интервалы.</li>
+        <li>Верхняя воронка дала статзначимый инкремент. Нижняя — в тренде, но при малых выборках не доказана, о чём я написал прямо в отчёте.</li>
+        <li>Плюс регулярный Brand Health Tracking в Wargaming и внедрение его с нуля в EBAC.</li>
+      </ul>
+      <div class="shots wide">
+        <figure class="shot" style="--ar:1.994"><img src="assets/img/brandlift-table.webp" alt="Таблица результатов brand lift исследования" loading="lazy"><figcaption>Сводка по воронке: контрольная и экспонированная группы, дельты и значимость</figcaption></figure>
+      </div>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p>Тот же метод отвечает на вопрос, влияет ли спонсорство на выбор бренда. Аудиторию можно просто спросить и <span class="hl">получить ответ с доверительным интервалом.</span></p></div>
+    </article>
+
+    <article class="case" data-tags="measure perf betting">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">Медийная закупка · 50+ млн показов в месяц</div>
+          <h3>Развёл клик-атрибуцию и пост-вью</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <p class="lede">До этого они смешивались: медийка получала чужие заслуги либо теряла свои. Видеореклама почти не даёт кликов, но даёт конверсии.</p>
+      <ul class="bul">
+        <li>Развёл клик-атрибуцию и пост-вью, оценивал вклад каждой отдельно.</li>
+        <li>Протестировал окна атрибуции 5 и 30 дней, сравнил вклад по каждому.</li>
+        <li>Оценка вклада через таргетную и контрольную группы.</li>
+        <li>Решение о бюджете принималось исходя из вклада медийных конверсий, а не из клик-модели.</li>
+        <li>Для букмекеров целевой метрикой был FTD, а не регистрация.</li>
+      </ul>
+      <div class="shots wide">
+        <figure class="shot" style="--ar:2.681"><img src="assets/img/postview-report.webp" alt="Отчёт по пост-вью атрибуции" loading="lazy"><figcaption>Отчёт: пост-вью конверсии рядом с клик-моделью</figcaption></figure>
+      </div>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p>Рекламодатели увидели конверсии, <span class="hl">которых клик-модель не фиксировала вообще.</span> У охватных активов та же болезнь: контакт с брендом и депозит разнесены во времени и по устройствам. Там, где площадка отдаёт пост-вью, я считаю его; где не отдаёт — сплиты и контрольные группы.</p></div>
+    </article>
+
+    <article class="case" data-tags="measure perf betting">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">Медийная закупка · автоматизированный анализ</div>
+          <h3>Нашёл точку, после которой лишнее касание перестаёт добавлять конверсию</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <ul class="bul">
+        <li>Анализ частоты показов и таймаутов между касаниями за период, а не за одну кампанию.</li>
+        <li>Определение точки, после которой дополнительный контакт начинает выжигать аудиторию.</li>
+        <li>Ротация креативов на каждом шаге цепочки: первое касание — один ролик, следующее через час-два — другой, третье — снова другой.</li>
+        <li>Автоматизированный анализ в разрезах: креативы, браузеры, устройства, разрешения экранов, гео, дни недели, глубина досмотра.</li>
+        <li>Перераспределение бюджета между балансерами и площадками на основе этих данных.</li>
+      </ul>
+      <div class="sublabel">Отдельная находка — перенос дорогой аудитории</div>
+      <p class="lede">Аудитория тематики аниме конвертировала лучше всех, но выкупалась дорого. Собрал её в сегменты Яндекс.Аудиторий и таргетировался на этих же людей в дешёвых тематиках — сериалах и дорамах. Та же аудитория, кратно ниже стоимость контакта.</p>
+      <div class="shots">
+        <figure class="shot" style="--ar:6.392"><img src="assets/img/traffic-resolutions.webp" alt="Разрез эффективности по разрешениям экрана" loading="lazy"><figcaption>Разрез по разрешениям экрана и стоимости целевого действия</figcaption></figure>
+        <figure class="shot" style="--ar:9.433"><img src="assets/img/campaign-cuts.webp" alt="Сводка по кампаниям с разрезами" loading="lazy"><figcaption>Автоматизированная сводка по кампаниям</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="case" data-tags="measure betting perf lead">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">Wargaming · IT-Agency · агентская работа</div>
+          <h3>Нахожу, где утекает бюджет на партнёрском трафике</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>−$27K</b><span>в месяц неэффективных расходов, Wargaming</span></div>
+        <div class="metric"><b>1 место</b><span>на мероприятии Яндекса за подход к выявлению мошеннического трафика</span></div>
+      </div>
+      <div class="cards">
+        <div class="card"><h4>Тест на каннибализацию бренда</h4><p>Отключил брендовый контекст в одном из регионов, чтобы измерить каннибализацию. Увидел всплеск регистраций у CPA-партнёров: они не приводили новых пользователей, а перехватывали брендовый трафик, за который компания уже платила.</p></div>
+        <div class="card"><h4>Куки-стаффинг через расширения</h4><p>Нашёл схему подмены трекинговых ссылок браузерными расширениями. Мошенники работают с разными расширениями и версиями — по этой сигнатуре их можно выделять системно, а не ловить поштучно.</p></div>
+        <div class="card"><h4>Органика против CPA по браузерам</h4><p>Сравнил распределение партнёрского трафика с органическим по браузерам и версиям обновлений. Если партнёр приводит живых людей, распределения похожи. Расхождение видно прямо на графике.</p></div>
+        <div class="card"><h4>Фильтрация невалидного трафика</h4><p>Фильтрация по GIVT и SIVT, интеграция с системами верификации, контроль качества площадок в медийной закупке.</p></div>
+      </div>
+      <div class="shots wide">
+        <figure class="shot" style="--ar:7.056"><img src="assets/img/antifraud-browsers.webp" alt="Сравнение показателей по браузерам" loading="lazy"><figcaption>Расхождение распределений по браузерам — сигнатура невалидного трафика</figcaption></figure>
+      </div>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p>У вертикалей с партнёрскими сетями и промокодами <span class="hl">цена фрода выше, чем в любой другой,</span> где я работал. Метод переносится на любой канал с внешней атрибуцией.</p></div>
+    </article>
+  </section>
+
+  <!-- ============ D. ПЕРФОРМАНС И ПРОДУКТ ============ -->
+  <section class="sec" id="perf">
+    <div class="sec-eyebrow">СЕКЦИЯ D</div>
+    <h2>Перформанс и продукт</h2>
+    <p class="sec-lede">Платные каналы на масштабе, продуктовые тесты и связка маркетинга с продажами после отправки заявки.</p>
+
+    <article class="case" data-tags="perf edtech betting">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">IT-Agency · EBAC Online · агентская работа</div>
+          <h3>Веду платные каналы на масштабе тысячи кампаний</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>$20K → $800K</b><span>масштаб банковского продукта в месяц с сохранением KPI</span></div>
+        <div class="metric"><b>11 проектов</b><span>и более 1000 кампаний одновременно</span></div>
+        <div class="metric"><b>50+ млн</b><span>показов в месяц в агентской медийной закупке</span></div>
+      </div>
+      <ul class="bul">
+        <li>Google Ads, Meta, Яндекс Директ — стратегия, медиаплан, реализация, мониторинг.</li>
+        <li>Матрица тестирования креативов: гипотеза, боль, сообщение, тон, визуал, формат — и результат по каждой связке.</li>
+        <li>Анализ креативов конкурентов как регулярный процесс.</li>
+        <li>Тесты офлайн-конверсий, определение критериев качественного лида для каждого продукта и канала.</li>
+        <li>Скоринг заявок и поиск закономерностей для офлайн-конверсий.</li>
+      </ul>
+      <div class="shots wide">
+        <figure class="shot" style="--ar:1.195"><img src="assets/img/creative-matrix.webp" alt="Матрица тестирования креативов" loading="lazy"><figcaption>Матрица тестов: аудитория, боль, сообщение, тон, визуал, формат</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="case" data-tags="perf edtech lead">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">EBAC Online · серия тестов по продуктам</div>
+          <h3>Нашёл оптимальную цену продукта через AB-тесты</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <p class="lede">Оптимум искал по четырём осям сразу: выручка, маржинальность, нагрузка на отдел продаж и порог одобрения кредитов.</p>
+      <div class="metrics"><div class="metric"><b>+9%</b><span>общий рост выручки по итогам серии тестов</span></div></div>
+      <div class="shots two">
+        <figure class="shot" style="--ar:4.204"><img src="assets/img/price-test-table.webp" alt="Таблица расчёта цен по продуктам" loading="lazy"><figcaption>Расчёт цены по продуктам: база, скидка, рассрочка, рекомендованная цена</figcaption></figure>
+        <figure class="shot" style="--ar:1.5"><img src="assets/img/landing-ux.webp" alt="Посадочная страница продукта" loading="lazy"><figcaption>Посадочная страница с тестируемым предложением</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="case" data-tags="perf edtech">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">EBAC Online · три сценария</div>
+          <h3>Переписал сценарий после отправки заявки</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <ul class="bul">
+        <li>Тестировали три сценария: прямая оплата, консультация менеджера, опрос для передачи данных.</li>
+        <li>Для разных продуктов выигрывали разные подходы — единого правила не нашлось.</li>
+      </ul>
+      <div class="metrics">
+        <div class="metric"><b>+30%</b><span>прямых оплат по части продуктов</span></div>
+        <div class="metric"><b>−12%</b><span>нагрузки на менеджеров при этом же</span></div>
+      </div>
+      <div class="shots wide">
+        <figure class="shot" style="--ar:1.588"><img src="assets/img/post-lead-scenario.webp" alt="Экраны сценариев после отправки заявки" loading="lazy"><figcaption>Страница, на которой тестировали сценарии</figcaption></figure>
+      </div>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p><span class="hl">Конверсия выросла, а себестоимость обработки упала.</span> Это редкая пара — обычно за рост конверсии платят нагрузкой на людей.</p></div>
+    </article>
+
+    <article class="case" data-tags="perf edtech lead">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">EBAC Online · продукт, коммуникация, производство контента</div>
+          <h3>Сделал AI рычагом конверсии</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>×2</b><span>рост конверсии из заявки в продажу по ряду продуктов, сильнее всего — в технических специальностях</span></div>
+        <div class="metric"><b>4,7% → 9,1%</b><span>конверсия на паре посадочных страниц в тесте</span></div>
+      </div>
+      <ul class="bul">
+        <li>Разработали продукт с доступом к нескольким AI-моделям.</li>
+        <li>Тест: пользователям дарили доступ к продукту при покупке профессии.</li>
+        <li>Презентация нового продукта командам маркетинга и продаж.</li>
+        <li>AI в коммуникации с блогерами — масштабирование переписки без роста команды.</li>
+        <li>Автонарезка длинных видео для соцсетей — больше контента при том же продакшене.</li>
+      </ul>
+      <div class="shots">
+        <figure class="shot" style="--ar:1.519"><img src="assets/img/ai-product.webp" alt="Интерфейс AI-продукта с доступом к моделям" loading="lazy"><figcaption>Продукт: доступ к нескольким AI-моделям в одном месте</figcaption></figure>
+        <figure class="shot" style="--ar:8.209"><img src="assets/img/ai-test-result.webp" alt="Результат AB-теста двух посадочных страниц" loading="lazy"><figcaption>Результат теста: конверсия и выручка на двух страницах</figcaption></figure>
+        <figure class="shot" style="--ar:1.638"><img src="assets/img/ai-presentation.webp" alt="Презентация продукта команде" loading="lazy"><figcaption>Презентация продукта командам маркетинга и продаж</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="case" data-tags="perf lead edtech betting">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">EBAC Online · маркетинг заканчивается не на заявке</div>
+          <h3>Связал маркетинг с продажами после отправки заявки</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <ul class="bul">
+        <li>Контроль «теплоты» лидов и сегментация по качеству.</li>
+        <li>Распределение заявок между менеджерами и по времени работы.</li>
+        <li>Контроль скорости реакции, дашборды по всей воронке.</li>
+        <li>Изменение графика работы отдела продаж после анализа конверсии из заявки в оплату по часам и дням недели.</li>
+        <li>Тест AI-ботов в нерабочие часы.</li>
+      </ul>
+      <div class="shots wide">
+        <figure class="shot" style="--ar:1.195"><img src="assets/img/sales-heatmap.webp" alt="Тепловая карта конверсии по часам и дням недели" loading="lazy"><figcaption>Конверсия по часам и дням недели — на этой карте видно, когда отдел продаж работал вхолостую</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="case" data-tags="lead perf edtech">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">EBAC Online · медиаплан как инструмент всей компании</div>
+          <h3>Перестроил медиапланирование под прогноз продаж</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <ul class="bul">
+        <li>Планирование по продуктам и каналам с учётом сезонности и исторических данных.</li>
+        <li>В расчёт добавил открытые лиды и прогнозную конверсию в продажи, а не только план по трафику.</li>
+        <li>Мониторинг конверсии из заявки в оплату по часам и дням недели — управление предложениями и ставками.</li>
+      </ul>
+      <div class="sublabel">Что это дало компании</div>
+      <ul class="bul">
+        <li>Регулярное попадание в медиаплан — прогноз стал рабочим документом.</li>
+        <li>Отдел продаж смог планировать нагрузку и мотивацию: от прогноза зависят их бонусы.</li>
+        <li>Смежные отделы получили горизонт планирования по объёму заявок.</li>
+        <li>Появилась база для разговора с финансами на языке прогноза.</li>
+      </ul>
+    </article>
+
+    <article class="case" data-tags="perf edtech">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">2022+ · работа в ограничениях</div>
+          <h3>Построил тёплый трафик, когда горячий подорожал</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <p class="lede">Ушла часть рекламных площадок, выросла стоимость горячего трафика и поискового спроса. Сместил модель с покупки готового спроса на сбор дешёвых контактов и последующий догрев.</p>
+      <ul class="bul">
+        <li>Квизы и тесты как точка входа на холодном трафике — стоимость контакта около $1,3.</li>
+        <li>Лид-магниты и полезные материалы, окупаемость до 3 месяцев.</li>
+        <li>Система уведомлений, follow-up, ограниченная по времени скидка как механика закрытия.</li>
+        <li>Сегментация базы и реактивация через CRM: email, мессенджеры, автооплаты.</li>
+        <li>Турниры и активности как способ собрать контакт до готовности покупать.</li>
+      </ul>
+    </article>
+
+    <article class="case" data-tags="perf edtech">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">EBAC Online · контент и SEO</div>
+          <h3>Собрал блог как канал сбора контактов</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>70 000+</b><span>посетителей блога ежемесячно</span></div>
+        <div class="metric"><b>+5%</b><span>дополнительной выручки за счёт контактов из блога</span></div>
+        <div class="metric"><b>12% → 18%</b><span>конверсия в регистрацию на странице вебинаров</span></div>
+      </div>
+      <ul class="bul">
+        <li>Раздел со статьями под поисковый трафик.</li>
+        <li>В статьях собираем контакты через мероприятия, полезные материалы и тесты.</li>
+        <li>Переработал страницу вебинаров: автоматический фон, аватарки спикеров, фильтрация, форма регистрации прямо на странице, подарок за регистрацию.</li>
+        <li>Стандартизация материалов уменьшила ручную работу команды.</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- ============ E. СОБЫТИЯ И КОНТЕНТ ============ -->
+  <section class="sec" id="events">
+    <div class="sec-eyebrow">СЕКЦИЯ E</div>
+    <h2>События и контент</h2>
+    <p class="sec-lede">Мероприятия и вебинары как повторяемые каналы с окупаемостью.</p>
+
+    <article class="case" data-tags="events edtech esports betting">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">EBAC TALKS · Бразилия и Мексика</div>
+          <h3>Сделал мероприятия отдельным каналом с окупаемостью</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>30+</b><span>мероприятий, от 50 до 450 человек</span></div>
+        <div class="metric"><b>2 месяца</b><span>окупаемость канала</span></div>
+      </div>
+      <ul class="bul">
+        <li>Построил процесс организации мероприятий как повторяемого канала.</li>
+        <li>Офлайн-формат с параллельной трансляцией.</li>
+      </ul>
+      <div class="shots">
+        <figure class="shot" style="--ar:1.502"><img src="assets/img/talks-hall.webp" alt="Зал на мероприятии EBAC TALKS" loading="lazy"><figcaption>Зал, EBAC TALKS</figcaption></figure>
+        <figure class="shot" style="--ar:1.778"><img src="assets/img/talks-letters.webp" alt="Сцена мероприятия EBAC TALKS" loading="lazy"><figcaption>Сцена и оформление площадки</figcaption></figure>
+        <figure class="shot" style="--ar:1.32"><img src="assets/img/talks-stage.webp" alt="Дискуссия на сцене EBAC TALKS" loading="lazy"><figcaption>Формат дискуссии на сцене</figcaption></figure>
+      </div>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p><span class="hl">Прямой аналог событийного портфеля:</span> пабстомпы, премии, офлайн-площадки. Разница в том, что там продавали образование, а не регистрации.</p></div>
+    </article>
+
+    <article class="case" data-tags="events edtech perf">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">EBAC Online · команда 4 человека</div>
+          <h3>Развил вебинарную воронку до 5000+ зрителей в месяц</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>≈$1,3</b><span>стоимость регистрации</span></div>
+        <div class="metric"><b>30 дней</b><span>окупаемость воронки</span></div>
+      </div>
+      <ul class="bul">
+        <li>Выстроенная воронка и аналитика на каждом шаге.</li>
+        <li>Система уведомлений, посадочные страницы, работа с базой и реактивация.</li>
+        <li>Улучшение презентаций и качества трансляции по данным удержания.</li>
+        <li>Ограниченная по времени скидка как механика закрытия.</li>
+      </ul>
+      <div class="shots two">
+        <figure class="shot" style="--ar:1.759"><img src="assets/img/webinar-room.webp" alt="Вебинарная комната с чатом" loading="lazy"><figcaption>Вебинарная комната</figcaption></figure>
+        <figure class="shot" style="--ar:1.344"><img src="assets/img/webinar-page.webp" alt="Страница расписания вебинаров" loading="lazy"><figcaption>Страница вебинаров после переработки</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="case" data-tags="events edtech">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">EBAC Online · Бразилия и Мексика</div>
+          <h3>Построил SMM-отдел с нуля на двух рынках</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>940 тыс.</b><span>подписчиков, Бразилия</span></div>
+        <div class="metric"><b>140 тыс.</b><span>подписчиков, Мексика</span></div>
+      </div>
+      <ul class="bul">
+        <li>Контент-план и календарь публикаций, построение аналитики.</li>
+        <li>Тестирование форматов, пользовательский контент, съёмки на улице, публикация отзывов.</li>
+        <li>Прогрев через полезные материалы.</li>
+      </ul>
+      <div class="shots two">
+        <figure class="shot" style="--ar:0.704"><img src="assets/img/smm-brazil.webp" alt="Аккаунт в соцсети, Бразилия" loading="lazy"><figcaption>Бразилия: 940 тыс. подписчиков</figcaption></figure>
+        <figure class="shot" style="--ar:0.699"><img src="assets/img/smm-mexico.webp" alt="Аккаунт в соцсети, Мексика" loading="lazy"><figcaption>Мексика: 140 тыс. подписчиков</figcaption></figure>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ F. КОМАНДА И ДЕНЬГИ ============ -->
+  <section class="sec" id="lead">
+    <div class="sec-eyebrow">СЕКЦИЯ F</div>
+    <h2>Команда, бюджет, управление</h2>
+    <p class="sec-lede">Прямое и матричное управление, найм, юнит-экономика и работа в другой стране.</p>
+
+    <article class="case" data-tags="lead">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">EBAC Online · Wargaming · IT-Agency</div>
+          <h3>Управлял командой напрямую и матрично</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>19</b><span>человек в прямом подчинении: 5 тимлидов и их команды</span></div>
+        <div class="metric"><b>до 30</b><span>человек в матричной команде без прямого подчинения, 6 функций</span></div>
+        <div class="metric"><b>7</b><span>специалистов нанял и вырастил до самостоятельных проектов</span></div>
+      </div>
+      <ul class="bul">
+        <li>В прямом подчинении — команды перформанс-рекламы, CRM, вебинаров, инфлюенсеров и контентных воронок.</li>
+        <li>Матричное управление в Wargaming: ивенты, биздев, платная реклама, соцсети, CRM, спецпроекты. Влиять без административного ресурса — отдельный навык.</li>
+        <li>Разработка систем мотивации и KPI для отделов и отдельных специалистов.</li>
+        <li>Проходил через сокращения и пересборку структуры. Знаю, как это делать, не останавливая направление и сохранив отношения с людьми, которых пришлось сократить.</li>
+      </ul>
+      <div class="sublabel">Как нанимаю</div>
+      <ul class="bul">
+        <li>Смотрю на кейсы и на проактивность, а не на формальный список мест работы.</li>
+        <li>Осознанно расширяю воронку: беру со скидкой на то, что человек может доучиться.</li>
+        <li>Компенсирую это жёстким испытательным сроком — расстаюсь заметно чаще среднего.</li>
+      </ul>
+      <div class="shots two">
+        <figure class="shot" style="--ar:1.371"><img src="assets/img/agency-team.webp" alt="Команда агентства" loading="lazy"><figcaption>Команда, IT-Agency</figcaption></figure>
+        <figure class="shot" style="--ar:1.61"><img src="assets/img/influencer-team.webp" alt="Команда по работе с блогерами" loading="lazy"><figcaption>Команда по работе с блогерами, Мексика</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="case" data-tags="lead perf edtech betting">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">EBAC Online · Wargaming · IT-Agency</div>
+          <h3>Перевёл маркетинг на управление через маржинальность</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>ДРР ≈35%</b><span>при бюджете $100–250K в месяц</span></div>
+        <div class="metric"><b>$1M+</b><span>в месяц в высокий сезон, Wargaming</span></div>
+        <div class="metric"><b>×2 / +80%</b><span>рост выручки в первый и второй год</span></div>
+      </div>
+      <ul class="bul">
+        <li>ДРР около 35% — целевой уровень: высокий чек, длинный цикл, кредитные продукты.</li>
+        <li>Медиапланирование по продуктам и каналам на исторических данных.</li>
+        <li>Мониторинг доли ФОТ в структуре расходов.</li>
+        <li>Управление бюджетами: свыше $1M в месяц в высокий сезон в Wargaming, $100–250K в месяц в EBAC, $800K в месяц на банковском проекте в IT-Agency.</li>
+      </ul>
+    </article>
+
+    <article class="case" data-tags="lead">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">Мексика и Бразилия · 3 года 8 месяцев в стране</div>
+          <h3>Четыре года руководил маркетингом в Латинской Америке</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <ul class="bul">
+        <li>Нанимал и вёл локальные команды в другой стране, на другом языке, в другой культуре.</li>
+        <li>Два рынка параллельно: Бразилия и Мексика.</li>
+        <li>Переговоры с топ-менеджментом, инвесторами, агентствами и международными командами.</li>
+        <li>Переговоры с партнёрами по платёжным системам, в том числе с мексиканским необанком PLATA.</li>
+        <li>Английский — свободный.</li>
+      </ul>
+      <div class="sublabel">Чему научился</div>
+      <ul class="bul">
+        <li>Мексиканская команда мягче в коммуникации и чувствительнее к прямой критике, чем привычно в СНГ.</li>
+        <li>Дедлайны сдвигаются, если не встроить в процесс промежуточные точки контроля.</li>
+        <li>Обратную связь пришлось перестроить: то, что в СНГ звучит нормально, там демотивирует.</li>
+        <li>Управленческий вывод: процесс должен компенсировать культурные особенности, а не бороться с ними.</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- ============ G. ЧТО НЕ СРАБОТАЛО ============ -->
+  <section class="sec" id="fail">
+    <div class="sec-eyebrow">СЕКЦИЯ G</div>
+    <h2>Что не сработало</h2>
+    <p class="sec-lede">Два дорогих урока. Оба про дисциплину масштабирования.</p>
+
+    <article class="case" data-tags="lead perf measure edtech gaming betting esports influence events">
+      <div class="case-top">
+        <div>
+          <div class="eyebrow">EBAC Online · Wargaming</div>
+          <h3>Разогнал бюджет по просьбе инвесторов и сломал воронку ниже по течению</h3>
+        </div>
+        <button class="copy">Скопировать</button>
+      </div>
+      <div class="cards">
+        <div class="card"><h4>Резкое масштабирование</h4><p>Динамика была хорошей и контролируемой, инвесторы попросили ×2 по бюджету с фокусом на выручку. Удлинился цикл сделки, снизился процент одобрений, много тёплых лидов зависло в работе и часть отвалилась. Реклама задним числом оказалась менее эффективной, чем выглядела.<span class="res">Вывод: масштабироваться нужно плавно и держать свою линию</span></p></div>
+        <div class="card"><h4>Годовой тест офлайн-рекламы</h4><p>Потратили заметную долю бюджета на охватную кампанию в тестовых городах, существенного аплифта относительно контрольных не увидели, бюджет перераспределили в диджитал.<span class="res">Вывод: сейчас я бы сократил горизонт теста и добавил промежуточные точки замера</span></p></div>
+      </div>
+      <div class="why"><span class="why-tag">Зачем это здесь</span><p>Первый случай про то, что нельзя разгонять то, что ниже по воронке не выдержит. Второй — про то, что <span class="hl">проверять гипотезу надо дёшево.</span></p></div>
+    </article>
+  </section>
+
+  <!-- ============ H. ЗАКРЫТИЕ ============ -->
+  <section class="sec" id="contacts">
+    <div class="sec-eyebrow">СЕКЦИЯ H</div>
+    <h2>С кем работал и как связаться</h2>
+
+    <div style="padding-top:28px">
+      <div class="sublabel">Рекомендации</div>
+      <div class="recs">
+        <div class="rec"><b>Эльдар Забитов</b><span>CMO, EBAC</span></div>
+        <div class="rec"><b>Евгений Ламехов</b><span>Marketing Director, Wargaming</span></div>
+        <div class="rec"><b>Богдан Гришин</b><span>Head of Marketing, Wargaming</span></div>
+        <div class="rec"><b>Hicham Nouhou</b><span>Head of PUBG Mobile, Russia</span></div>
+        <div class="rec"><b>Павел Коркодинов</b><span>CMO, Ultimate Education</span></div>
+        <div class="rec"><b>Юрий Фролов</b><span>CMO, Яндекс.Вертикали</span></div>
+      </div>
+      <div class="note" style="margin-bottom:34px"><p>Контакты предоставлю по запросу.</p></div>
+
+      <div class="signoff">
+        <img src="assets/img/egor-kholov.webp" alt="Егор Холов">
+        <div>
+          <b>Егор Холов</b>
+          <span>Маркетинг-директор · 14 лет · гейминг, EdTech, перформанс</span>
+        </div>
+      </div>
+      <div class="sublabel">Связаться</div>
+      <div class="contacts">
+        <div class="contact"><div class="k">Телеграм</div><a href="https://t.me/khoegor">t.me/khoegor</a></div>
+        <div class="contact"><div class="k">Почта</div><a href="mailto:egor.kholov@gmail.com">egor.kholov@gmail.com</a></div>
+        <div class="contact"><div class="k">LinkedIn</div><a href="https://www.linkedin.com/in/kholove/">linkedin.com/in/kholove</a></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>Плейбук кейсов · Егор Холов</div>
+    <div>Маркетинг-директор · 14 лет · гейминг, EdTech, перформанс</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb"><img id="lb-img" src="" alt=""></div>
+
+<script>
+(function(){
+  var cases = Array.prototype.slice.call(document.querySelectorAll('.case'));
+  var secs  = Array.prototype.slice.call(document.querySelectorAll('.sec'));
+  var btns  = Array.prototype.slice.call(document.querySelectorAll('.fbtn'));
+  var count = document.getElementById('fcount');
+
+  function plural(n){
+    var t = n % 100, o = n % 10;
+    if (t > 10 && t < 20) return 'кейсов';
+    if (o === 1) return 'кейс';
+    if (o >= 2 && o <= 4) return 'кейса';
+    return 'кейсов';
+  }
+
+  function apply(preset){
+    var want = preset === 'all' ? null : preset.split(' ');
+    var shown = 0;
+    cases.forEach(function(c){
+      var tags = (c.getAttribute('data-tags') || '').split(' ');
+      var ok = !want || want.some(function(t){ return tags.indexOf(t) > -1; });
+      c.classList.toggle('hidden', !ok);
+      if (ok) shown++;
+    });
+    secs.forEach(function(s){
+      var inner = s.querySelectorAll('.case');
+      if (!inner.length) return;
+      var any = Array.prototype.some.call(inner, function(c){ return !c.classList.contains('hidden'); });
+      s.classList.toggle('hidden', !any);
+    });
+    count.textContent = 'показано ' + shown + ' из ' + cases.length + ' ' + plural(cases.length);
+    if (typeof scheduleSpy === 'function') scheduleSpy();
+  }
+
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      btns.forEach(function(x){ x.classList.remove('on'); });
+      b.classList.add('on');
+      apply(b.getAttribute('data-preset'));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+  apply('all');
+
+  // логотип возвращает наверх, не оставляя решётку в адресной строке
+  var totop = document.getElementById('totop');
+  if (totop) totop.addEventListener('click', function(e){
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // подсветка пункта меню, чей раздел сейчас на экране
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.topnav a[data-nav]'));
+  var head = document.querySelector('.stickyhead');
+  var tracked = navLinks.map(function(a){ return a.getAttribute('href').slice(1); });
+  var raf = null;
+
+  function spy(){
+    raf = null;
+    if (!navLinks.length) return;
+    var line = head.offsetHeight + 24;
+    var current = '';
+    tracked.forEach(function(id){
+      var sec = document.getElementById(id);
+      if (!sec || sec.classList.contains('hidden')) return;
+      if (sec.getBoundingClientRect().top <= line) current = id;
+    });
+    // у самого низа страницы подсвечиваем последний пункт
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
+      for (var k = tracked.length - 1; k >= 0; k--) {
+        var last = document.getElementById(tracked[k]);
+        if (last && !last.classList.contains('hidden')) { current = tracked[k]; break; }
+      }
+    }
+    navLinks.forEach(function(a){
+      a.classList.toggle('on', a.getAttribute('href') === '#' + current);
+    });
+  }
+  function scheduleSpy(){ if (raf === null) raf = window.requestAnimationFrame(spy); }
+
+  window.addEventListener('scroll', scheduleSpy, { passive: true });
+  window.addEventListener('resize', scheduleSpy, { passive: true });
+  window.addEventListener('load', scheduleSpy);
+  scheduleSpy();
+
+  // копирование текста кейса
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest ? e.target.closest('.copy') : null;
+    if (!btn) return;
+    var box = btn.closest('.case').cloneNode(true);
+    var b = box.querySelector('.copy'); if (b) b.remove();
+    box.querySelectorAll('figcaption').forEach(function(f){ f.remove(); });
+    var text = box.innerText.split('\n').map(function(l){ return l.trim(); })
+                 .filter(function(l){ return l; }).join('\n');
+    var done = function(){
+      btn.textContent = 'Скопировано';
+      btn.classList.add('done');
+      setTimeout(function(){ btn.textContent = 'Скопировать'; btn.classList.remove('done'); }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function(){});
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch(err){}
+      document.body.removeChild(ta);
+    }
+  });
+
+  // лайтбокс
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img');
+  document.addEventListener('click', function(e){
+    var img = e.target;
+    if (img.tagName === 'IMG' && img.closest('.shot')) {
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt || '';
+      lb.classList.add('on');
+    }
+  });
+  lb.addEventListener('click', function(){ lb.classList.remove('on'); lbImg.src = ''; });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { lb.classList.remove('on'); lbImg.src = ''; }
+  });
+})();
+</script>
+
+</body>
+</html>
