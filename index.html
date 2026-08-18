@@ -17,7 +17,7 @@
 }
 *{box-sizing:border-box;font-family:'Golos Text',-apple-system,'Segoe UI',sans-serif;}
 html{scroll-behavior:smooth;}
-section[id]{scroll-margin-top:150px;}
+section[id],h3[id]{scroll-margin-top:150px;}
 body{margin:0;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;}
 a{color:var(--acc);text-decoration:none;}
 a:hover{color:var(--acc2);}
@@ -158,6 +158,7 @@ img{max-width:100%;}
 .contact a:hover{color:var(--acc);}
 
 footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
+.foot-note{margin:0 0 18px;font-size:16px;line-height:1.55;color:var(--dim);max-width:760px;}
 .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:15px;color:var(--mute);}
 
 /* ---------- лайтбокс ---------- */
@@ -166,6 +167,11 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
 .lb img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:10px;}
 
 .hidden{display:none !important;}
+
+/* содержимое обновляется при смене подборки */
+@keyframes swap{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+.swapping{animation:swap 0.34s cubic-bezier(0.22,0.61,0.36,1) both;}
+@media (prefers-reduced-motion:reduce){.swapping{animation:none;}}
 
 @media (max-width:1020px){
   .proj,.proj:nth-child(even){grid-template-columns:1fr;gap:18px;}
@@ -177,6 +183,9 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
   .hero{padding-top:48px;}
   .sec{padding-top:48px;margin-top:36px;}
   .fcount{margin-left:0;width:100%;}
+  /* кнопка копирования уходит под заголовок, иначе выталкивает его за край */
+  .case-top{flex-direction:column;align-items:flex-start;gap:12px;}
+  .copy{order:2;}
 }
 @media print{
   .topbar,.filterbar,.copy,.lb{display:none !important;}
@@ -210,10 +219,10 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
   <div class="filterbar-in">
     <span class="filterbar-lbl">Подборка</span>
     <button class="fbtn on" data-preset="all">Все кейсы</button>
+    <button class="fbtn" data-preset="top">За 5 минут</button>
     <button class="fbtn" data-preset="esports gaming">Киберспорт и гейминг</button>
     <button class="fbtn" data-preset="betting measure influence">Беттинг и медиа</button>
     <button class="fbtn" data-preset="edtech perf">EdTech и e-commerce</button>
-    <button class="fbtn" data-preset="lead measure">Директорская роль</button>
     <span class="fcount" id="fcount"></span>
   </div>
 </div>
@@ -288,7 +297,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
     <h2>Гейминг, киберспорт и комьюнити</h2>
     <p class="sec-lede">Четыре года внутри игровой индустрии: World of Tanks, СНГ-регион. Активации внутри игровой экономики, спонсорские спецпроекты, реактивация, персонализация.</p>
 
-    <article class="case" data-tags="esports gaming betting">
+    <article class="case" data-tags="esports gaming betting top">
       <div class="case-top">
         <div>
           <div class="eyebrow">Wargaming · World of Tanks · придумал, защитил, получил бюджет, вёл сам</div>
@@ -358,7 +367,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
       </div>
     </article>
 
-    <article class="case" data-tags="gaming brand esports betting">
+    <article class="case" data-tags="gaming brand esports betting top">
       <div class="case-top">
         <div>
           <div class="eyebrow">Wargaming · совместно с PR- и биздев-командами</div>
@@ -431,7 +440,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
       <div class="why"><p>Концентрируемся на инфоповодах, <span class="hl">у которых высокие шансы разойтись по соцсетям и медиапартнёрам.</span></p></div>
     </article>
 
-    <article class="case" data-tags="gaming betting perf measure">
+    <article class="case" data-tags="gaming betting perf measure top">
       <div class="case-top">
         <div>
           <div class="eyebrow">Wargaming · решение работает больше 6 лет</div>
@@ -493,7 +502,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
     <h2>Инфлюенсеры и стримеры</h2>
     <p class="sec-lede">Построил канал с нуля до третьего по выручке в компании. Отбор, брифы, аналитика и то, что делать с теми, кто не сработал.</p>
 
-    <article class="case" data-tags="influence edtech betting esports">
+    <article class="case" data-tags="influence edtech betting esports top">
       <div class="case-top">
         <div>
           <div class="eyebrow">EBAC Online · Мексика и Бразилия</div>
@@ -576,11 +585,11 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
     <h2>Измерение охватных каналов</h2>
     <p class="sec-lede">То, что отличает директора по маркетингу от сильного перформанс-специалиста: умение защитить или закрыть охватный бюджет цифрой.</p>
 
-    <article class="case" data-tags="measure lead brand gaming">
+    <article class="case" data-tags="measure lead brand gaming top">
       <div class="case-top">
         <div>
           <div class="eyebrow">Wargaming · год наблюдения, вывод отрицательный</div>
-          <h3>Измерил инкрементальность офлайн-рекламы на парах похожих городов</h3>
+          <h3 id="offline-uplift">Измерил инкрементальность офлайн-рекламы на парах похожих городов</h3>
         </div>
         <button class="copy">Скопировать</button>
       </div>
@@ -592,7 +601,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
         <li>Решение: не масштабировать на весь СНГ, бюджет перераспределить в диджитал.</li>
       </ul>
       <div class="note"><p>На тест ушла заметная доля годового бюджета, и результат оказался отрицательным. Решение не масштабировать сэкономило кратно больше и заменило годовой спор об эффективности офлайна цифрой. Я считаю такой результат нормальной стоимостью знания.</p></div>
-      <div class="why"><p>Ответ на вопрос, что я делаю с результатами измерений. Вывод здесь не «резать» и не «оставить как есть», а <span class="hl">«перераспределить по данным».</span> Готов приходить с выводом «этот актив не окупается».</p></div>
+      <div class="why"><p>Ответ на вопрос, что я делаю с результатами измерений. Вывод здесь не «резать» и не «оставить как есть», а <span class="hl">«перераспределить по данным».</span> Готов приходить с выводом «этот актив не окупается».</p></div>
     </article>
 
     <article class="case" data-tags="measure brand lead betting">
@@ -974,8 +983,8 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
       <div class="sublabel">Как нанимаю</div>
       <ul class="bul">
         <li>Смотрю на кейсы и на проактивность, а не на формальный список мест работы.</li>
-        <li>Осознанно расширяю воронку: беру со скидкой на то, что человек может доучиться.</li>
-        <li>Компенсирую это жёстким испытательным сроком — расстаюсь заметно чаще среднего.</li>
+        <li>Расширяю воронку найма за счёт потенциала: беру со скидкой на то, что человек может доучиться.</li>
+        <li>Компенсирую это жёстким испытательным сроком — решение принимаю быстро, в обе стороны.</li>
       </ul>
       <div class="shots two">
         <figure class="shot" style="--ar:1.371"><img src="assets/img/agency-team.webp" alt="Команда агентства" loading="lazy"><figcaption>Команда, IT-Agency</figcaption></figure>
@@ -983,7 +992,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
       </div>
     </article>
 
-    <article class="case" data-tags="lead perf edtech betting">
+    <article class="case" data-tags="lead perf edtech betting top">
       <div class="case-top">
         <div>
           <div class="eyebrow">EBAC Online · Wargaming · IT-Agency</div>
@@ -1039,15 +1048,16 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
       <div class="case-top">
         <div>
           <div class="eyebrow">EBAC Online · Wargaming</div>
-          <h3>Разогнал бюджет по просьбе инвесторов и сломал воронку ниже по течению</h3>
+          <h3>Дважды разгонял бюджет слишком быстро и оба раза заплатил за это</h3>
         </div>
         <button class="copy">Скопировать</button>
       </div>
       <div class="cards">
         <div class="card"><h4>Резкое масштабирование</h4><p>Динамика была хорошей и контролируемой, инвесторы попросили ×2 по бюджету с фокусом на выручку. Удлинился цикл сделки, снизился процент одобрений, много тёплых лидов зависло в работе и часть отвалилась. Реклама задним числом оказалась менее эффективной, чем выглядела.<span class="res">Вывод: масштабироваться нужно плавно и держать свою линию</span></p></div>
-        <div class="card"><h4>Годовой тест офлайн-рекламы</h4><p>Потратили заметную долю бюджета на охватную кампанию в тестовых городах, существенного аплифта относительно контрольных не увидели, бюджет перераспределили в диджитал.<span class="res">Вывод: сейчас я бы сократил горизонт теста и добавил промежуточные точки замера</span></p></div>
+        <div class="card"><h4>Ускоренный показ перед выходными</h4><p>Тринадцать лет назад в пятницу попросили срочно увеличить бюджет. Поставил ускоренный показ в Google Ads и не выставил дневной лимит. За выходные открутилось в 9 раз больше запланированного.<span class="res">Вывод: дневные лимиты обязательны на любой кампании, крупные изменения — не перед выходными</span></p></div>
       </div>
-      <div class="why"><p>Первый случай про то, что нельзя разгонять то, что ниже по воронке не выдержит. Второй — про то, что <span class="hl">проверять гипотезу надо дёшево.</span></p></div>
+      <div class="why"><p>Первый случай про то, что нельзя разгонять то, что ниже по воронке не выдержит. Второй — про то, что <span class="hl">у скорости должен быть предел, заданный заранее.</span></p></div>
+      <div class="note"><p>Третий дорогой урок — годовой тест офлайн-рекламы, где вывод оказался отрицательным, — разобран целиком в <a href="#offline-uplift">разделе про измерение</a>.</p></div>
     </article>
   </section>
 
@@ -1087,9 +1097,12 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <div>Плейбук кейсов · Егор Холов</div>
-    <div>Маркетинг-директор · 14 лет · гейминг, EdTech, перформанс</div>
+  <div class="wrap">
+    <p class="foot-note">Часть показателей округлена, детали под NDA — готов разобрать любой кейс подробнее.</p>
+    <div class="foot">
+      <div>Плейбук кейсов · Егор Холов</div>
+      <div>Маркетинг-директор · 14 лет · гейминг, EdTech, перформанс</div>
+    </div>
   </div>
 </footer>
 
@@ -1129,11 +1142,21 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
     if (typeof scheduleSpy === 'function') scheduleSpy();
   }
 
+  // всё ниже первого экрана проявляется заново — видно, что подборка сменилась
+  function replay(){
+    secs.forEach(function(sec){ sec.classList.remove('swapping'); });
+    void document.body.offsetWidth;
+    secs.forEach(function(sec){
+      if (!sec.classList.contains('hidden')) sec.classList.add('swapping');
+    });
+  }
+
   btns.forEach(function(b){
     b.addEventListener('click', function(){
       btns.forEach(function(x){ x.classList.remove('on'); });
       b.classList.add('on');
       apply(b.getAttribute('data-preset'));
+      replay();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
@@ -1144,6 +1167,22 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
   if (totop) totop.addEventListener('click', function(e){
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // ссылка на кейс, скрытый фильтром, сначала возвращает подборку «Все кейсы»
+  document.addEventListener('click', function(e){
+    var link = e.target.closest ? e.target.closest('a[href^="#"]:not([data-nav])') : null;
+    if (!link) return;
+    var target = document.getElementById(link.getAttribute('href').slice(1));
+    if (!target) return;
+    var host = target.closest('.case');
+    if (host && host.classList.contains('hidden')) {
+      // возвращаем «Все кейсы» без прыжка наверх, который делает сама кнопка
+      btns.forEach(function(x){ x.classList.toggle('on', x.getAttribute('data-preset') === 'all'); });
+      apply('all');
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 
   // подсветка пункта меню, чей раздел сейчас на экране
