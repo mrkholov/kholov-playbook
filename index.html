@@ -114,7 +114,7 @@ img{max-width:100%;}
       border-radius:12px;overflow:hidden;}
 .shots.wide .shot{flex-basis:100%;}
 /* узкие полосы-таблицы: показываем в натуральную ширину, а не во всю колонку */
-.shots .shot.cap{flex-grow:0;flex-basis:min(100%,var(--w));max-width:min(100%,var(--w));}
+.shots .shot.cap{flex-grow:0;flex-basis:min(100%,var(--w,860px));max-width:min(100%,var(--w,860px));}
 .shot img{display:block;width:100%;height:auto;cursor:zoom-in;background:#0E0E10;}
 .shot figcaption{font-size:14.5px;color:var(--mute);padding:10px 14px 12px;line-height:1.45;border-top:1px solid var(--line);margin-top:auto;}
 
@@ -340,7 +340,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
         <li>Пилот остановлен в 2022 в связи с релокацией.</li>
       </ul>
       <div class="shots">
-        <figure class="shot" style="--ar:1.775"><img src="assets/img/wot-cs-stream.webp" alt="Стрим механики: витрина скинов CS для зрителей" loading="lazy"><figcaption>Кадр эфира: витрина наград и цена каждого скина для зрителей</figcaption></figure>
+        <figure class="shot cap" style="--ar:1.775;--w:620px"><img src="assets/img/wot-cs-stream.webp" alt="Стрим механики: витрина скинов CS для зрителей" loading="lazy"><figcaption>Кадр эфира: витрина наград и цена каждого скина для зрителей</figcaption></figure>
       </div>
       <div class="why"><p>Механика живёт внутри игровой экономики: награда выдаётся за пройденный порог в продукте. <span class="hl">Такие деньги видно в удержании когорты,</span> и результат читается по её поведению через месяцы.</p></div>
     </article>
@@ -537,7 +537,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
       <div class="note"><p>Добавил в скрипт переговоров запрос скидки у инфлюенсера для его аудитории. Одна строка в процессе, которая изменила экономику всего канала.</p></div>
       <div class="shots two">
         <figure class="shot" style="--ar:1.61"><img src="assets/img/influencer-team.webp" alt="Команда по работе с блогерами" loading="lazy"><figcaption>Команда по работе с блогерами, Мексика</figcaption></figure>
-        <figure class="shot" style="--ar:7.538"><img src="assets/img/influencer-tracker.webp" alt="Таблица учёта интеграций с блогерами" loading="lazy"><figcaption>Учёт интеграций: блогер, платформа, менеджер, цена, статус</figcaption></figure>
+        <figure class="shot cap" style="--ar:7.538"><img src="assets/img/influencer-tracker.webp" alt="Таблица учёта интеграций с блогерами" loading="lazy"><figcaption>Учёт интеграций: блогер, платформа, менеджер, цена, статус</figcaption></figure>
       </div>
       <div class="why"><p>Формат я не изобретал. Построил систему: как отбираем, как брифуем, как считаем и <span class="hl">что делаем с теми, кто не сработал.</span> Это переносится в любую вертикаль, где блогер — закупочная единица.</p></div>
     </article>
@@ -642,7 +642,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
         <li>Плюс регулярный Brand Health Tracking в Wargaming и внедрение его с нуля в EBAC.</li>
       </ul>
       <div class="shots wide">
-        <figure class="shot" style="--ar:1.994"><img src="assets/img/brandlift-table.webp" alt="Таблица результатов brand lift исследования" loading="lazy"><figcaption>Сводка по воронке: контрольная и экспонированная группы, дельты и значимость</figcaption></figure>
+        <figure class="shot cap" style="--ar:1.994"><img src="assets/img/brandlift-table.webp" alt="Таблица результатов brand lift исследования" loading="lazy"><figcaption>Сводка по воронке: контрольная и экспонированная группы, дельты и значимость</figcaption></figure>
       </div>
       <div class="why"><p>Тот же метод отвечает на вопрос, влияет ли спонсорство на выбор бренда. Аудиторию можно просто спросить и <span class="hl">получить ответ с доверительным интервалом.</span></p></div>
     </article>
@@ -664,7 +664,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
         <li>Для букмекеров целевой метрикой был FTD, а не регистрация.</li>
       </ul>
       <div class="shots wide">
-        <figure class="shot" style="--ar:2.681"><img src="assets/img/postview-report.webp" alt="Отчёт по пост-вью атрибуции" loading="lazy"><figcaption>Отчёт: пост-вью конверсии рядом с клик-моделью</figcaption></figure>
+        <figure class="shot cap" style="--ar:2.681"><img src="assets/img/postview-report.webp" alt="Отчёт по пост-вью атрибуции" loading="lazy"><figcaption>Отчёт: пост-вью конверсии рядом с клик-моделью</figcaption></figure>
       </div>
       <div class="why"><p>Рекламодатели увидели конверсии, <span class="hl">которых клик-модель не фиксировала вообще.</span> У охватных активов та же болезнь: контакт с брендом и депозит разнесены во времени и по устройствам. Там, где площадка отдаёт пост-вью, я считаю его; где не отдаёт — сплиты и контрольные группы.</p></div>
     </article>
@@ -688,7 +688,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
       <p class="lede">Аудитория тематики аниме конвертировала лучше всех, но выкупалась дорого. Собрал её в сегменты Яндекс.Аудиторий и таргетировался на этих же людей в дешёвых тематиках — сериалах и дорамах. Та же аудитория, кратно ниже стоимость контакта.</p>
       <div class="shots">
         <figure class="shot cap" style="--ar:6.392;--w:831px"><img src="assets/img/traffic-resolutions.webp" alt="Разрез эффективности по разрешениям экрана" loading="lazy"><figcaption>Разрез по разрешениям экрана и стоимости целевого действия</figcaption></figure>
-        <figure class="shot" style="--ar:9.433"><img src="assets/img/campaign-cuts.webp" alt="Сводка по кампаниям с разрезами" loading="lazy"><figcaption>Автоматизированная сводка по кампаниям</figcaption></figure>
+        <figure class="shot cap" style="--ar:9.433"><img src="assets/img/campaign-cuts.webp" alt="Сводка по кампаниям с разрезами" loading="lazy"><figcaption>Автоматизированная сводка по кампаниям</figcaption></figure>
       </div>
     </article>
 
@@ -711,7 +711,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
         <div class="card"><h4>Фильтрация невалидного трафика</h4><p>Фильтрация по GIVT и SIVT, интеграция с системами верификации, контроль качества площадок в медийной закупке.</p></div>
       </div>
       <div class="shots wide">
-        <figure class="shot cap" style="--ar:7.056;--w:882px"><img src="assets/img/antifraud-browsers.webp" alt="Сравнение показателей по браузерам" loading="lazy"><figcaption>Расхождение распределений по браузерам — сигнатура невалидного трафика</figcaption></figure>
+        <figure class="shot cap" style="--ar:7.056"><img src="assets/img/antifraud-browsers.webp" alt="Сравнение показателей по браузерам" loading="lazy"><figcaption>Расхождение распределений по браузерам — сигнатура невалидного трафика</figcaption></figure>
       </div>
       <div class="why"><p>У вертикалей с партнёрскими сетями и промокодами <span class="hl">цена фрода выше, чем в любой другой,</span> где я работал. Метод переносится на любой канал с внешней атрибуцией.</p></div>
     </article>
@@ -744,7 +744,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
         <li>Скоринг заявок и поиск закономерностей для офлайн-конверсий.</li>
       </ul>
       <div class="shots wide">
-        <figure class="shot" style="--ar:1.195"><img src="assets/img/creative-matrix.webp" alt="Матрица тестирования креативов" loading="lazy"><figcaption>Матрица тестов: аудитория, боль, сообщение, тон, визуал, формат</figcaption></figure>
+        <figure class="shot cap" style="--ar:1.195"><img src="assets/img/creative-matrix.webp" alt="Матрица тестирования креативов" loading="lazy"><figcaption>Матрица тестов: аудитория, боль, сообщение, тон, визуал, формат</figcaption></figure>
       </div>
     </article>
 
@@ -759,7 +759,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
       <p class="lede">Оптимум искал по четырём осям сразу: выручка, маржинальность, нагрузка на отдел продаж и порог одобрения кредитов.</p>
       <div class="metrics"><div class="metric"><b>+9%</b><span>общий рост выручки по итогам серии тестов</span></div></div>
       <div class="shots two">
-        <figure class="shot" style="--ar:4.204"><img src="assets/img/price-test-table.webp" alt="Таблица расчёта цен по продуктам" loading="lazy"><figcaption>Расчёт цены по продуктам: база, скидка, рассрочка, рекомендованная цена</figcaption></figure>
+        <figure class="shot cap" style="--ar:4.204"><img src="assets/img/price-test-table.webp" alt="Таблица расчёта цен по продуктам" loading="lazy"><figcaption>Расчёт цены по продуктам: база, скидка, рассрочка, рекомендованная цена</figcaption></figure>
         <figure class="shot" style="--ar:1.5"><img src="assets/img/landing-ux.webp" alt="Посадочная страница продукта" loading="lazy"><figcaption>Посадочная страница с тестируемым предложением</figcaption></figure>
       </div>
     </article>
@@ -781,7 +781,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
         <div class="metric"><b>−12%</b><span>нагрузки на менеджеров при этом же</span></div>
       </div>
       <div class="shots wide">
-        <figure class="shot" style="--ar:1.588"><img src="assets/img/post-lead-scenario.webp" alt="Экраны сценариев после отправки заявки" loading="lazy"><figcaption>Страница, на которой тестировали сценарии</figcaption></figure>
+        <figure class="shot cap" style="--ar:1.588"><img src="assets/img/post-lead-scenario.webp" alt="Экраны сценариев после отправки заявки" loading="lazy"><figcaption>Страница, на которой тестировали сценарии</figcaption></figure>
       </div>
       <div class="why"><p><span class="hl">Конверсия выросла, а себестоимость обработки упала.</span> Это редкая пара — обычно за рост конверсии платят нагрузкой на людей.</p></div>
     </article>
@@ -830,7 +830,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
         <li>Тест AI-ботов в нерабочие часы.</li>
       </ul>
       <div class="shots wide">
-        <figure class="shot" style="--ar:1.195"><img src="assets/img/sales-heatmap.webp" alt="Тепловая карта конверсии по часам и дням недели" loading="lazy"><figcaption>Конверсия по часам и дням недели — на этой карте видно, когда отдел продаж работал вхолостую</figcaption></figure>
+        <figure class="shot cap" style="--ar:1.195"><img src="assets/img/sales-heatmap.webp" alt="Тепловая карта конверсии по часам и дням недели" loading="lazy"><figcaption>Конверсия по часам и дням недели — на этой карте видно, когда отдел продаж работал вхолостую</figcaption></figure>
       </div>
     </article>
 
