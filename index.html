@@ -113,6 +113,8 @@ img{max-width:100%;}
       display:flex;flex-direction:column;margin:0;background:#0E0E10;border:1px solid var(--line);
       border-radius:12px;overflow:hidden;}
 .shots.wide .shot{flex-basis:100%;}
+/* узкие полосы-таблицы: показываем в натуральную ширину, а не во всю колонку */
+.shots .shot.cap{flex-grow:0;flex-basis:min(100%,var(--w));max-width:min(100%,var(--w));}
 .shot img{display:block;width:100%;height:auto;cursor:zoom-in;background:#0E0E10;}
 .shot figcaption{font-size:14.5px;color:var(--mute);padding:10px 14px 12px;line-height:1.45;border-top:1px solid var(--line);margin-top:auto;}
 
@@ -337,6 +339,9 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
         <li>Сам вёл стримы, данные сверял с командой аналитики.</li>
         <li>Пилот остановлен в 2022 в связи с релокацией.</li>
       </ul>
+      <div class="shots">
+        <figure class="shot" style="--ar:1.775"><img src="assets/img/wot-cs-stream.webp" alt="Стрим механики: витрина скинов CS для зрителей" loading="lazy"><figcaption>Кадр эфира: витрина наград и цена каждого скина для зрителей</figcaption></figure>
+      </div>
       <div class="why"><p>Механика живёт внутри игровой экономики: награда выдаётся за пройденный порог в продукте. <span class="hl">Такие деньги видно в удержании когорты,</span> и результат читается по её поведению через месяцы.</p></div>
     </article>
 
@@ -682,7 +687,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
       <div class="sublabel">Отдельная находка — перенос дорогой аудитории</div>
       <p class="lede">Аудитория тематики аниме конвертировала лучше всех, но выкупалась дорого. Собрал её в сегменты Яндекс.Аудиторий и таргетировался на этих же людей в дешёвых тематиках — сериалах и дорамах. Та же аудитория, кратно ниже стоимость контакта.</p>
       <div class="shots">
-        <figure class="shot" style="--ar:6.392"><img src="assets/img/traffic-resolutions.webp" alt="Разрез эффективности по разрешениям экрана" loading="lazy"><figcaption>Разрез по разрешениям экрана и стоимости целевого действия</figcaption></figure>
+        <figure class="shot cap" style="--ar:6.392;--w:831px"><img src="assets/img/traffic-resolutions.webp" alt="Разрез эффективности по разрешениям экрана" loading="lazy"><figcaption>Разрез по разрешениям экрана и стоимости целевого действия</figcaption></figure>
         <figure class="shot" style="--ar:9.433"><img src="assets/img/campaign-cuts.webp" alt="Сводка по кампаниям с разрезами" loading="lazy"><figcaption>Автоматизированная сводка по кампаниям</figcaption></figure>
       </div>
     </article>
@@ -706,7 +711,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
         <div class="card"><h4>Фильтрация невалидного трафика</h4><p>Фильтрация по GIVT и SIVT, интеграция с системами верификации, контроль качества площадок в медийной закупке.</p></div>
       </div>
       <div class="shots wide">
-        <figure class="shot" style="--ar:7.056"><img src="assets/img/antifraud-browsers.webp" alt="Сравнение показателей по браузерам" loading="lazy"><figcaption>Расхождение распределений по браузерам — сигнатура невалидного трафика</figcaption></figure>
+        <figure class="shot cap" style="--ar:7.056;--w:882px"><img src="assets/img/antifraud-browsers.webp" alt="Сравнение показателей по браузерам" loading="lazy"><figcaption>Расхождение распределений по браузерам — сигнатура невалидного трафика</figcaption></figure>
       </div>
       <div class="why"><p>У вертикалей с партнёрскими сетями и промокодами <span class="hl">цена фрода выше, чем в любой другой,</span> где я работал. Метод переносится на любой канал с внешней атрибуцией.</p></div>
     </article>
@@ -802,8 +807,10 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0 60px;}
       </ul>
       <div class="shots">
         <figure class="shot" style="--ar:1.519"><img src="assets/img/ai-product.webp" alt="Интерфейс AI-продукта с доступом к моделям" loading="lazy"><figcaption>Продукт: доступ к нескольким AI-моделям в одном месте</figcaption></figure>
-        <figure class="shot" style="--ar:8.209"><img src="assets/img/ai-test-result.webp" alt="Результат AB-теста двух посадочных страниц" loading="lazy"><figcaption>Результат теста: конверсия и выручка на двух страницах</figcaption></figure>
         <figure class="shot" style="--ar:1.638"><img src="assets/img/ai-presentation.webp" alt="Презентация продукта команде" loading="lazy"><figcaption>Презентация продукта командам маркетинга и продаж</figcaption></figure>
+      </div>
+      <div class="shots">
+        <figure class="shot cap" style="--ar:8.209;--w:706px"><img src="assets/img/ai-test-result.webp" alt="Результат AB-теста двух посадочных страниц" loading="lazy"><figcaption>Результат теста: конверсия и выручка на двух страницах</figcaption></figure>
       </div>
     </article>
 
