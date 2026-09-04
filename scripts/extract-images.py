@@ -2,7 +2,7 @@ import zipfile, io, os
 from PIL import Image
 
 SRC = r'C:\Users\Kholov\Downloads\Playbook - Egor Kholov.pptx'
-OUT = r'C:\Users\Kholov\Работа с VS Code\kholov-playbook\assets\img'
+OUT = r'C:\Users\Kholov\Работа с VS Code\kholov-playbook\job\playbook\assets\img'
 MAXW = 1500
 
 MAP = {

@@ -6,8 +6,9 @@
 """
 import base64, io, os, re, sys
 
-SRC = 'index.html'
-DST = sys.argv[1] if len(sys.argv) > 1 else 'artifact.html'
+DIR = 'job/playbook'
+SRC = os.path.join(DIR, 'index.html')
+DST = sys.argv[1] if len(sys.argv) > 1 else os.path.join(DIR, 'artifact.html')
 
 s = io.open(SRC, encoding='utf-8').read()
 
@@ -16,7 +17,7 @@ cache = {}
 def inline(m):
     path = m.group(1)
     if path not in cache:
-        data = open(path, 'rb').read()
+        data = open(os.path.join(DIR, path), 'rb').read()
         cache[path] = 'data:image/webp;base64,' + base64.b64encode(data).decode('ascii')
     return 'src="%s"' % cache[path]
 
